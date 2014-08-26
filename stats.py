@@ -7,7 +7,7 @@ def mean(vals):
         raise TypeError("The list was not numbers.")
     except:
         print "Something unknown happened with the list."
-    return float(total)/length
+    return total/length
 
 def mode(vals):
     """Computes the mode from a list of values."""
@@ -29,3 +29,12 @@ def std(vals):
 def var(vals):
     """Computes the variance from a list of values."""
     pass
+
+def median(vals):
+    vals.sort()
+    length = len(vals)
+    index = length / 2
+    if length % 2 == 0:
+       return mean([vals[index], vals[index - 1]])
+    else:
+       return vals[index]
